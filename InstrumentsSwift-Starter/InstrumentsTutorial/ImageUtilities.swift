@@ -34,7 +34,7 @@ extension UIImage {
         filter!.setValue(input, forKey: kCIInputImageKey)
         let outputImage = filter!.outputImage
         guard let outImage = context.createCGImage(outputImage!, fromRect: outputImage!.extent) else {
-            return nil
+            return self
         }
         let returnImage = UIImage(CGImage: outImage)
         return returnImage
